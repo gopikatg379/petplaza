@@ -1,0 +1,62 @@
+/* Custom CSS for Login Page */
+.login-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    background: url('src/assets/media/bg.avif') no-repeat center center fixed;
+    background-size: cover;
+    padding-left: 220px;
+    padding-bottom: 360px;
+  }
+  
+#card {
+    width: 300px;
+    border-radius: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border: 1px solid black;
+    height:290px;
+  }
+  
+  .card-body {
+    padding: 1px;
+    background: transparent;
+  }
+  
+  .card-title {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    background: transparent;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+#user,#pwd{
+    font-weight: bold;
+    margin-left: 20px;
+    color: black;
+}
+#user_password,#user_name1{
+    background-color: transparent;
+    border: 1px solid black;
+    width:250px;
+    margin-left: 20px;
+}  
+#btn{
+    background-color: transparent;
+    width: 150px;
+    border: 1px solid black;
+    font-weight: bold;
+    height: 40px;
+    margin-left: 70px;
+    border-radius: 8px;
+}
+#btn:hover{
+    background-color: aliceblue;
+}
+  

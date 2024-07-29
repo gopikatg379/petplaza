@@ -1,0 +1,52 @@
+/* petDetails.css */
+
+.book-details-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-details-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .book-details-container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .book-details-container h4 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .book-details-container button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .book-details-container button:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .book-details-container .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+  
+  .book-details-container .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
