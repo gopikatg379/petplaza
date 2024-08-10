@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import {Form, FormControl } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-const Navbar = () => {
+
+const Navbar = ({ searchTerm, setSearchTerm }) => {
     let[cat,setCate] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
     const fetchCat= async()=>{
         try{
             const response = await axios.get('http://127.0.0.1:8000/adminapp/list')
@@ -18,12 +18,17 @@ const Navbar = () => {
             console.error('Error',error)
         }
     }
+    
     useEffect(()=>{
         fetchCat()
     },[])
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
+        
     };
+    const filteredCat = cat.filter(item =>
+        item.category_name.toLowerCase().includes(searchTerm.toLowerCase()) 
+    );
     return (
         <nav className="navbar">
             
@@ -37,8 +42,18 @@ const Navbar = () => {
                         placeholder="Search for your campanion"
                         className="mr-sm-2"
                         value={searchTerm}
+                        id='search'
                         onChange={handleSearchChange}
                     />
+                    {searchTerm && (
+                    <div className="category-results">
+                        {filteredCat.map((item) => (
+                            <div key={item.category_id} className="result-item">
+                                {item.category_name}  
+                            </div>
+                        ))}
+                    </div>
+                )}
                 </Form>
             </div>
             <ul className="nav-links">
@@ -49,6 +64,7 @@ const Navbar = () => {
                 <li><Link to={'/'}><FontAwesomeIcon icon={faRightFromBracket} /></Link></li>
             </ul>
         </nav>
+        
     );
 }
 

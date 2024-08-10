@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 import { Link } from "react-router-dom";
 
-const Home = ()=>{
+const Home = ({ searchTerm })=>{
     let [pet,setPet]= useState([]);
     const [feedbacks, setFeedbacks] = useState([]);
     const services = [
@@ -55,6 +55,9 @@ const Home = ()=>{
     useEffect(()=>{
         fetchData()
     },[])
+    const filteredPets = pet.filter(p =>
+      p.category.category_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     
     return(
       
@@ -81,7 +84,7 @@ const Home = ()=>{
         </div>
         <div className='scrollable-container'>
         <div className='row'>
-      {pet.map((x) => (
+      {filteredPets.map((x) => (
         <Card style={{ width: '17rem' }} className='col-3' key={x.pet_id}>
           <Card.Img variant="top" src={`http://127.0.0.1:8000${x.pet_image}`} alt={x.pet_name} style={{ height: '200px', objectFit: 'contain' }} /> 
           <Card.Body>

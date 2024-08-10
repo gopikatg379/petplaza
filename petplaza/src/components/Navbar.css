@@ -34,6 +34,29 @@
 }
 .search-bar-container{
     margin-left: 450px;
+    position: relative;
+    display: inline-block;
+}
+.category-results {
+    position: absolute;
+    top: 40px; 
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #f1f1f1;
 }
 #head1{
     font-family: Arial, Helvetica, sans-serif;

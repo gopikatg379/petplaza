@@ -9,14 +9,16 @@ import UserLogin from "./components/login";
 import UpdateDetails from "./components/update";
 import ProductsPage from "./components/product";
 import AddFeedback from "./components/feedback";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
+  const [searchTerm, setSearchTerm] = useState('');
   return(
     <div className="APP">
-      {location.pathname !== '/' && <Navbar />}
+      {location.pathname !== '/' && <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />}
       <Routes>
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/home" element={<Home searchTerm={searchTerm}/>}/>
         <Route path="add" element={<Add/>}/>
         <Route path="addfeed" element={<AddFeedback/>}/>
         <Route path="/product" element={<ProductsPage/>}/>
